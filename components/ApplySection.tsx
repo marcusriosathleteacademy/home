@@ -8,6 +8,12 @@ import Toast from "@/components/ui/Toast";
 import { createClient } from "@/lib/supabase/client";
 import { sportOptions, gradeOptions } from "@/lib/content";
 
+// Created once at module scope — calling createClient() fresh on every
+// submit spun up a new GoTrueClient each time against the same storage
+// key ("Multiple GoTrueClient instances detected"), which caused
+// intermittent silent failures on repeat submissions in production.
+const supabase = createClient();
+
 type Fields = {
   parentName: string;
   studentName: string;
@@ -66,7 +72,6 @@ export default function ApplySection() {
     setSubmitting(true);
     setSubmitError(false);
     try {
-      const supabase = createClient();
       const { error } = await supabase.from("applications").insert({
         parent_name: fields.parentName,
         student_name: fields.studentName,
