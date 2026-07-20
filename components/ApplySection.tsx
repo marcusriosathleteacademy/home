@@ -65,24 +65,31 @@ export default function ApplySection() {
     }
     setSubmitting(true);
     setSubmitError(false);
-    const supabase = createClient();
-    const { error } = await supabase.from("applications").insert({
-      parent_name: fields.parentName,
-      student_name: fields.studentName,
-      email: fields.email,
-      phone: fields.phone,
-      sport: fields.sport,
-      grade: fields.grade,
-      reclassed,
-      message: fields.message,
-    });
-    setSubmitting(false);
-    if (error) {
+    try {
+      const supabase = createClient();
+      const { error } = await supabase.from("applications").insert({
+        parent_name: fields.parentName,
+        student_name: fields.studentName,
+        email: fields.email,
+        phone: fields.phone,
+        sport: fields.sport,
+        grade: fields.grade,
+        reclassed,
+        message: fields.message,
+      });
+      if (error) {
+        console.error("Application insert failed:", error);
+        setSubmitError(true);
+        return;
+      }
+      setSubmitted(true);
+      setErrors({});
+    } catch (err) {
+      console.error("Application submit threw:", err);
       setSubmitError(true);
-      return;
+    } finally {
+      setSubmitting(false);
     }
-    setSubmitted(true);
-    setErrors({});
   };
 
   const reclassOptions: { v: "yes" | "no"; label: string }[] = [
