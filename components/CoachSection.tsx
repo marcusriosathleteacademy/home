@@ -1,6 +1,8 @@
 import Badge from "@/components/ui/Badge";
 import PhotoSlot from "@/components/ui/PhotoSlot";
-import { coachFacts } from "@/lib/content";
+import { coachBio } from "@/lib/content";
+
+const HANDLE = "@marcusriosofficial";
 
 export default function CoachSection() {
   return (
@@ -22,52 +24,31 @@ export default function CoachSection() {
         />
         <div>
           <Badge tone="neon">Head Coach &amp; Founder</Badge>
-          <ul style={{ listStyle: "none", margin: "20px 0 0", padding: 0, display: "flex", flexDirection: "column", gap: 14 }}>
-            {coachFacts.map((f) => (
-              <li
-                key={f.text}
-                style={{
-                  display: "flex",
-                  gap: 12,
-                  alignItems: "flex-start",
-                  font: "var(--text-body-md)",
-                  color: "var(--text-secondary)",
-                }}
-              >
-                <span
-                  style={{
-                    width: 6,
-                    height: 6,
-                    borderRadius: "50%",
-                    background: "var(--neon-1)",
-                    marginTop: 9,
-                    flexShrink: 0,
-                  }}
-                />
-                <span>
-                  {f.text}
-                  {f.links && (
+          <div style={{ display: "flex", flexDirection: "column", gap: 16, marginTop: 20 }}>
+            {coachBio.map((paragraph, i) => {
+              const parts = paragraph.split(HANDLE);
+              return (
+                <p key={i} style={{ font: "var(--text-body-md)", color: "var(--text-secondary)", margin: 0 }}>
+                  {parts.length === 2 ? (
                     <>
-                      {" — "}
-                      {f.links.map((l, i) => (
-                        <span key={l.href}>
-                          {i > 0 && " | "}
-                          <a
-                            href={l.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            style={{ color: "var(--accent-blue)" }}
-                          >
-                            {l.label}
-                          </a>
-                        </span>
-                      ))}
+                      {parts[0]}
+                      <a
+                        href="https://www.instagram.com/marcusriosofficial/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ color: "var(--accent-blue)" }}
+                      >
+                        {HANDLE}
+                      </a>
+                      {parts[1]}
                     </>
+                  ) : (
+                    paragraph
                   )}
-                </span>
-              </li>
-            ))}
-          </ul>
+                </p>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

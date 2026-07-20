@@ -45,18 +45,11 @@ export const programStats: {
   },
 ];
 
-export const coachFacts: { text: string; links?: { label: string; href: string }[] }[] = [
-  { text: "Former NFL Athlete, Denver Broncos" },
-  { text: "Former UCLA Bruins Student-Athlete" },
-  {
-    text: "#1 Fitness & Sports Performance Influencer in Sacramento — 1M+ followers @marcusriosofficial (Source: Feedspot)",
-    links: [
-      { label: "Instagram", href: "https://www.instagram.com/marcusriosofficial/" },
-      { label: "TikTok", href: "https://www.tiktok.com/@marcusriosofficial" },
-      { label: "YouTube", href: "https://www.youtube.com/@marcusriosofficial" },
-    ],
-  },
-  { text: "Sacramento native — Cosumnes Oaks High School" },
+export const coachBio: string[] = [
+  "A standout athlete at UCLA, Marcus went on to compete professionally in the NFL with the Denver Broncos and in the CFL before transitioning into performance coaching.",
+  "He previously served as a Sports Performance Specialist at EXOS, working with athletes across the NFL, NBA, MLB, NHL, and NCAA, and earning certification as an EXOS Performance Coach.",
+  "Marcus specializes in developing speed, strength, and movement quality for athletes at all levels, from youth to professional, with a built following of over 1 million athletes across social media (@marcusriosofficial).",
+  "Today, Marcus is a trusted performance coach known for preparing athletes to train with purpose, move efficiently, and perform at their best when it matters most.",
 ];
 
 export const facilities: { id: string; label: string; placeholder: string; src?: string }[] = [
