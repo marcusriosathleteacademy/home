@@ -34,6 +34,8 @@ const emptyFields: Fields = {
   message: "",
 };
 
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
 function validate(fields: Fields) {
   const errors: Partial<Record<keyof Fields, string>> = {};
   if (!fields.parentName.trim()) errors.parentName = "Required";
@@ -71,26 +73,42 @@ export default function ApplySection() {
     }
     setSubmitting(true);
     setSubmitError(false);
+    const payload = {
+      parent_name: fields.parentName,
+      student_name: fields.studentName,
+      email: fields.email,
+      phone: fields.phone,
+      sport: fields.sport,
+      grade: fields.grade,
+      reclassed,
+      message: fields.message,
+    };
+    // This form has shown intermittent, purely client-side failures on
+    // production (no request even reaching Supabase) that succeed on a
+    // plain retry — likely a transient issue in the browser/network path
+    // rather than the request itself. Retry a couple of times before
+    // surfacing an error, so a real applicant doesn't lose their
+    // submission to a one-off blip.
+    const maxAttempts = 3;
+    let lastError: unknown = null;
     try {
-      const { error } = await supabase.from("applications").insert({
-        parent_name: fields.parentName,
-        student_name: fields.studentName,
-        email: fields.email,
-        phone: fields.phone,
-        sport: fields.sport,
-        grade: fields.grade,
-        reclassed,
-        message: fields.message,
-      });
-      if (error) {
-        console.error("Application insert failed:", error);
-        setSubmitError(true);
-        return;
+      for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+        try {
+          const { error } = await supabase.from("applications").insert(payload);
+          if (!error) {
+            setSubmitted(true);
+            setErrors({});
+            return;
+          }
+          lastError = error;
+          console.error(`Application insert failed (attempt ${attempt}/${maxAttempts}):`, error);
+        } catch (err) {
+          lastError = err;
+          console.error(`Application submit threw (attempt ${attempt}/${maxAttempts}):`, err);
+        }
+        if (attempt < maxAttempts) await sleep(500 * attempt);
       }
-      setSubmitted(true);
-      setErrors({});
-    } catch (err) {
-      console.error("Application submit threw:", err);
+      console.error("Application submit failed after all retries:", lastError);
       setSubmitError(true);
     } finally {
       setSubmitting(false);
