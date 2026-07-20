@@ -1,0 +1,570 @@
+/* ==========================================================================
+   Marcus Rios Athlete Academy — Design tokens
+   Ported from the Claude Design handoff (tokens/colors.css, typography.css,
+   spacing.css, base.css). Font families are loaded via next/font/google in
+   layout.tsx and exposed here through their CSS variables.
+   ========================================================================== */
+
+:root {
+  /* ---- Base palette ---------------------------------------------------- */
+  --black-0: #000000;
+  --black-1: #0a0b0a;
+  --black-2: #131511;
+  --black-3: #1d201b;
+  --black-4: #2a2e26;
+
+  --white-0: #ffffff;
+
+  --neon-1: #cbff3f;
+  --neon-2: #a8e600;
+  --neon-3: #e6ffb0;
+  --neon-glow: #d7ff5c;
+
+  --accent-blue: #3fa9ff;
+  --accent-orange: #ff8a3d;
+  --accent-red: #ff3f4e;
+  --accent-violet: #b58bff;
+
+  /* ---- Semantic aliases (dark surface) ---------------------------------- */
+  --surface-canvas: var(--black-1);
+  --surface-raised: var(--black-2);
+  --surface-card: var(--black-3);
+  --surface-overlay: rgba(10, 11, 10, 0.9);
+  --border-default: var(--black-4);
+  --border-strong: #3a3f33;
+
+  --text-primary: var(--white-0);
+  --text-secondary: #b7bcae;
+  --text-muted: #7d8274;
+  --text-on-neon: var(--black-1);
+
+  --brand-signal: var(--neon-1);
+  --brand-signal-hover: #d9ff70;
+  --brand-signal-active: var(--neon-2);
+
+  --state-info: var(--accent-blue);
+  --state-warning: var(--accent-orange);
+  --state-danger: var(--accent-red);
+  --state-success: var(--neon-1);
+
+  --focus-ring: var(--neon-1);
+
+  /* ---- Fonts (variables bound by next/font/google in layout.tsx) -------- */
+  --font-display: var(--font-anton), Impact, sans-serif;
+  --font-body: var(--font-open-sans), 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: var(--font-plex-mono), 'SF Mono', monospace;
+  --font-accent: var(--font-jost), 'Century Gothic', sans-serif;
+
+  /* ---- Display / headline sizes ------------------------------------------ */
+  --size-display-xl: clamp(3.5rem, 4vw + 2rem, 7rem);
+  --size-display-lg: clamp(2.75rem, 3vw + 1.5rem, 4.5rem);
+  --size-display-md: clamp(2rem, 2vw + 1rem, 3rem);
+  --size-display-sm: 1.5rem;
+  --leading-display: 0.96;
+
+  /* ---- Body / UI scale ---------------------------------------------------- */
+  --text-heading-lg: 700 1.75rem/1.2 var(--font-body);
+  --text-heading-md: 700 1.375rem/1.28 var(--font-body);
+  --text-heading-sm: 600 1.125rem/1.35 var(--font-body);
+
+  --text-body-lg: 400 1.125rem/1.55 var(--font-body);
+  --text-body-md: 400 1rem/1.55 var(--font-body);
+  --text-body-sm: 400 0.875rem/1.5 var(--font-body);
+
+  --text-label: 600 0.8125rem/1.2 var(--font-body);
+  --text-eyebrow: 700 0.75rem/1 var(--font-accent);
+  --text-caption: 500 0.75rem/1.4 var(--font-body);
+
+  --text-stat-xl: 600 3.5rem/1 var(--font-mono);
+  --text-stat-lg: 600 2.25rem/1 var(--font-mono);
+  --text-stat-md: 500 1.5rem/1.1 var(--font-mono);
+  --text-stat-sm: 500 1rem/1.2 var(--font-mono);
+
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.04em;
+  --tracking-widest: 0.14em;
+
+  /* ---- Spacing (4px base) -------------------------------------------------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  --radius-none: 0px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-pill: 999px;
+
+  --border-hairline: 1px;
+  --border-thick: 2px;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.6);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.55);
+  --shadow-glow-neon: 0 0 0 1px rgba(203, 255, 63, 0.4), 0 0 24px rgba(203, 255, 63, 0.35);
+  --shadow-glow-neon-sm: 0 0 12px rgba(203, 255, 63, 0.25);
+  --shadow-focus: 0 0 0 3px rgba(203, 255, 63, 0.45);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --duration-slow: 360ms;
+
+  /* Page section container width, matches the design's clamp(20px,8vw,1100px) gutters */
+  --page-gutter: clamp(20px, 8vw, 1100px);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--surface-canvas);
+  color: var(--text-primary);
+  font: 400 1rem/1.55 var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 { margin: 0; }
+p { margin: 0; }
+
+a { color: var(--brand-signal); text-decoration: none; }
+a:hover { color: var(--brand-signal-hover); text-decoration: underline; }
+
+button { font-family: inherit; }
+
+::selection { background: var(--neon-1); color: var(--text-on-neon); }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   Layout utilities
+   ========================================================================== */
+
+.section {
+  padding: clamp(40px, 8vw, 64px) var(--page-gutter);
+  scroll-margin-top: 128px;
+}
+
+.section--raised { background: var(--surface-raised); }
+.section--black { background: var(--black-0); }
+
+.eyebrow {
+  font: var(--text-eyebrow);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--neon-1);
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font: 400 var(--size-display-md) / var(--leading-display) var(--font-display);
+  text-transform: uppercase;
+  font-style: italic;
+  transform: skewX(-8deg);
+  transform-origin: left;
+  display: inline-block;
+  color: var(--text-primary);
+  margin: 0 0 20px;
+}
+
+/* ==========================================================================
+   Design-system components (ported from _ds_bundle.js)
+   ========================================================================== */
+
+/* Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font: var(--text-eyebrow);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+}
+.badge--neon { background: var(--neon-3); color: var(--black-1); }
+.badge--info { background: rgba(63, 169, 255, 0.18); color: var(--accent-blue); }
+.badge--warning { background: rgba(255, 138, 61, 0.18); color: var(--accent-orange); }
+.badge--danger { background: rgba(255, 63, 78, 0.18); color: var(--accent-red); }
+.badge--neutral { background: var(--surface-raised); color: var(--text-secondary); }
+
+/* Card */
+.card {
+  background: var(--surface-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  color: var(--text-primary);
+}
+.card--glow {
+  border-color: var(--brand-signal);
+  box-shadow: var(--shadow-glow-neon-sm);
+}
+
+/* Button */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-base) var(--ease-out),
+    color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out);
+}
+.btn:disabled { cursor: not-allowed; opacity: 0.4; }
+
+.btn--sm { padding: 8px 14px; font: var(--text-label); }
+.btn--md { padding: 12px 20px; font: var(--text-label); }
+.btn--lg { padding: 16px 28px; font: 700 0.9375rem/1.2 var(--font-body); }
+
+.btn--primary { background: var(--brand-signal); color: var(--text-on-neon); }
+.btn--primary:hover:not(:disabled) { background: var(--brand-signal-hover); box-shadow: var(--shadow-glow-neon-sm); }
+.btn--primary:active:not(:disabled) { background: var(--brand-signal-active); box-shadow: none; }
+
+.btn--secondary { background: var(--surface-raised); color: var(--text-primary); border-color: var(--border-strong); }
+.btn--secondary:hover:not(:disabled) { background: var(--black-4); }
+.btn--secondary:active:not(:disabled) { background: var(--black-4); }
+
+.btn--ghost { background: transparent; color: var(--text-primary); }
+.btn--ghost:hover:not(:disabled) { background: var(--surface-raised); }
+.btn--ghost:active:not(:disabled) { background: var(--surface-card); }
+
+.btn--danger { background: var(--state-danger); color: var(--white-0); }
+.btn--danger:hover:not(:disabled) { background: #ff5c68; }
+.btn--danger:active:not(:disabled) { background: #e0303f; }
+
+/* Form field label shared by Input/Select */
+.field { display: flex; flex-direction: column; gap: 6px; font-family: var(--font-body); }
+.field__label {
+  font: var(--text-label);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+.field__error { font: var(--text-caption); color: var(--state-danger); }
+
+.field__control {
+  background: var(--surface-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  padding: 12px 14px;
+  font: var(--text-body-md);
+  outline: none;
+  transition: border-color var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast) var(--ease-out);
+}
+.field__control:focus:not(.field__control--error) {
+  border-color: var(--brand-signal);
+  box-shadow: var(--shadow-focus);
+}
+.field__control--error { border-color: var(--state-danger); }
+
+textarea.field__control { resize: vertical; min-height: 90px; font-family: var(--font-body); }
+
+/* Toast */
+.toast {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--surface-raised);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  box-shadow: var(--shadow-md);
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  font: var(--text-body-sm);
+}
+.toast__dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.toast--success { border: 1px solid var(--neon-1); }
+.toast--success .toast__dot { background: var(--neon-1); }
+.toast--danger { border: 1px solid var(--accent-red); }
+.toast--danger .toast__dot { background: var(--accent-red); }
+
+/* Photo placeholder (no real photo supplied for this slot) */
+.photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-default);
+  border-radius: 4px;
+  color: var(--text-muted);
+  font: var(--text-caption);
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+/* Bar + header + (open) mobile nav stick together as one unit, so the
+   header's position never assumes a fixed bar height — the bar can wrap
+   to two lines on narrow screens without the header cutting into it. */
+.header-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 41;
+}
+
+.announcement-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px var(--page-gutter);
+  background: var(--accent-blue);
+  flex-wrap: wrap;
+  text-align: center;
+}
+.announcement-bar__text,
+.announcement-bar__link {
+  font: var(--text-label);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--text-on-neon);
+}
+.announcement-bar__link {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px var(--page-gutter);
+  background: rgba(10, 11, 10, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-default);
+  gap: 24px;
+}
+
+.site-header__logo {
+  text-decoration: none;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.site-header__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+.site-header__hamburger span {
+  width: 26px;
+  height: 2px;
+  background: var(--text-primary);
+}
+
+.site-header__nav {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.site-header__nav-link,
+.mobile-nav__link {
+  font: var(--text-label);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 12px 4px;
+}
+.site-header__nav-link:hover,
+.mobile-nav__link:hover {
+  text-decoration: none;
+  color: var(--brand-signal-hover);
+}
+
+.site-header__cta,
+.mobile-nav__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--brand-signal);
+  color: var(--text-on-neon);
+  border-radius: var(--radius-md);
+  padding: 10px 18px;
+  font: var(--text-label);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.site-header__cta:hover { color: var(--text-on-neon); text-decoration: none; background: var(--brand-signal-hover); }
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  background: var(--black-0);
+  border-bottom: 1px solid var(--border-default);
+  padding: 8px 24px 16px;
+}
+.mobile-nav__link {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border-default);
+}
+.mobile-nav__cta {
+  margin-top: 16px;
+  text-align: center;
+  padding: 14px 18px;
+}
+.mobile-nav__cta:hover { text-decoration: none; }
+
+@media (max-width: 1100px) {
+  .site-header__hamburger { display: flex; }
+  .site-header__nav { display: none; }
+}
+
+@media (min-width: 1101px) {
+  .mobile-nav { display: none !important; }
+}
+
+/* ==========================================================================
+   Split-image section grid, used across Hero/Program/Coach/Training/etc.
+   ========================================================================== */
+
+.split-grid {
+  display: grid;
+  align-items: center;
+}
+
+@media (max-width: 860px) {
+  .split-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+}
+
+/* ==========================================================================
+   4-up stat / facility grids
+   ========================================================================== */
+
+.stat-grid,
+.facility-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .stat-grid,
+  .facility-grid {
+    grid-template-columns: repeat(2, minmax(160px, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .stat-grid,
+  .facility-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Facility photos: a wider frame reads fine at 2-4 up, but at one column on
+   phones there's room to show more of the shot — square gets more context
+   than a short, cropped strip. */
+.facility-photo {
+  aspect-ratio: 4 / 3;
+}
+
+@media (max-width: 520px) {
+  .facility-photo {
+    aspect-ratio: 1 / 1;
+  }
+}
+
+/* ==========================================================================
+   Apply form
+   ========================================================================== */
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  gap: 18px;
+}
+
+@media (max-width: 480px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Duration pill on each schedule row — desktop only, drops on tablet/mobile
+   where the row is already tight against the wrapped activity name. */
+@media (max-width: 1024px) {
+  .schedule-duration {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.site-footer {
+  padding: 40px var(--page-gutter);
+  border-top: 1px solid var(--border-default);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  scroll-margin-top: 128px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.site-footer__left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.site-footer__label {
+  font: var(--text-caption);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--text-muted);
+}
+
+.site-footer__link {
+  font: var(--text-caption);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
