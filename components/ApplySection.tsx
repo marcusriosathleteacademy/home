@@ -5,7 +5,7 @@ import Input from "@/components/ui/Input";
 import Select from "@/components/ui/Select";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
-import { supabase } from "@/lib/supabase";
+import { createClient } from "@/lib/supabase/client";
 import { sportOptions, gradeOptions } from "@/lib/content";
 
 type Fields = {
@@ -65,6 +65,7 @@ export default function ApplySection() {
     }
     setSubmitting(true);
     setSubmitError(false);
+    const supabase = createClient();
     const { error } = await supabase.from("applications").insert({
       parent_name: fields.parentName,
       student_name: fields.studentName,
