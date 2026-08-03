@@ -14,9 +14,14 @@ export default function ScheduleSection() {
           <h2 className="section-title" style={{ marginBottom: 8 }}>
             Daily Schedule
           </h2>
-          <div style={{ font: "var(--text-caption)", color: "var(--text-muted)", marginBottom: 20 }}>
+          <div style={{ font: "var(--text-caption)", color: "var(--text-muted)", marginBottom: 12 }}>
             Monday–Thursday, 8:00 AM – 2:00 PM.
           </div>
+          <p style={{ font: "var(--text-body-md)", color: "var(--text-secondary)", marginBottom: 20 }}>
+            Students may attend 1–4 days per week, depending on their goals and family schedule.
+            Homeschool and charter school students may participate on approved school days in
+            accordance with their school&apos;s funding guidelines.
+          </p>
           <PhotoSlot
             src="/facilities-wide.jpg"
             alt="Wide shot of the training facility"

@@ -11,7 +11,7 @@ export default function Header() {
     <div className="header-sticky">
       <div className="announcement-bar">
         <span className="announcement-bar__text">
-          Applications for the 2026–27 year close August 17
+          Applications for the 2026–27 year close August 24
         </span>
         <a href="#apply" className="announcement-bar__link">
           Apply now

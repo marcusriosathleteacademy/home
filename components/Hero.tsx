@@ -61,7 +61,7 @@ export default function Hero() {
             marginTop: 10,
           }}
         >
-          Deadline Aug 17
+          Deadline Aug 24
         </div>
       </div>
       <PhotoSlot

@@ -95,6 +95,11 @@ export const faqData: { question: string; answer: string | string[] }[] = [
       "No. The academic block is a supervised study hall and academic support session that works alongside your existing homeschool curriculum or independent study program — it doesn't replace it.",
   },
   {
+    question: "How many days per week does my athlete need to attend?",
+    answer:
+      "Students may attend 1–4 days per week, depending on their goals and family schedule. Homeschool and charter school students may participate on approved school days in accordance with their school's funding guidelines.",
+  },
+  {
     question: "Do you help with NCAA recruiting?",
     answer:
       "Yes. Athlete mentorship covers recruiting fundamentals, highlight reels, NIL basics, and direct guidance from a coach who's been recruited himself.",
@@ -107,7 +112,7 @@ export const faqData: { question: string; answer: string | string[] }[] = [
   {
     question: "What's the application deadline?",
     answer:
-      "Applications for the 2026–27 year close August 17. Submit the form below and we'll follow up by email within 2 business days.",
+      "Applications for the 2026–27 year close August 24. Submit the form below and we'll follow up by email within 2 business days.",
   },
 ];
 

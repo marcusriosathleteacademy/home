@@ -127,7 +127,7 @@ export default function ApplySection() {
           Apply
         </div>
         <h2 className="section-title" style={{ textAlign: "center", marginBottom: 8, transformOrigin: "center" }}>
-          Deadline to Join: <span style={{ color: "var(--accent-blue)" }}>August 17</span>
+          Deadline to Join: <span style={{ color: "var(--accent-blue)" }}>August 24</span>
         </h2>
         <p style={{ font: "var(--text-body-md)", color: "var(--text-secondary)", textAlign: "center", marginBottom: 32 }}>
           Apply now to reserve your athlete&apos;s place in the program.
