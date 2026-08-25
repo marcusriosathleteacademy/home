@@ -109,12 +109,7 @@ export const faqData: { question: string; answer: string | string[] }[] = [
     answer:
       "No. We work with both currently homeschooled athletes and families considering reclassification — Coach Rios and staff can walk you through the options.",
   },
-  {
-    question: "What's the application deadline?",
-    answer:
-      "Applications for the 2026–27 year are open on a rolling basis. Submit the form below and we'll follow up by email within 2 business days.",
-  },
-];
+  ];
 
 export const sportOptions: SelectOption[] = [
   { value: "", label: "Select a sport" },
