@@ -9,15 +9,6 @@ export default function Header() {
 
   return (
     <div className="header-sticky">
-      <div className="announcement-bar">
-        <span className="announcement-bar__text">
-          Applications for the 2026–27 year close August 24
-        </span>
-        <a href="#apply" className="announcement-bar__link">
-          Apply now
-        </a>
-      </div>
-
       <header className="site-header">
         <a href="#top" className="site-header__logo">
           <Image src="/logo-cropped.png" alt="Marcus Rios Athlete Academy" width={144} height={44} priority />
