@@ -51,18 +51,6 @@ export default function Hero() {
         <a href="#apply" className="site-header__cta" style={{ padding: "16px 28px" }}>
           Apply Now
         </a>
-        <div
-          style={{
-            font: "var(--text-caption)",
-            fontWeight: 400,
-            textTransform: "none",
-            letterSpacing: "normal",
-            color: "var(--text-muted)",
-            marginTop: 10,
-          }}
-        >
-          Deadline Aug 24
-        </div>
       </div>
       <PhotoSlot
         src="/hero-team.jpg"
