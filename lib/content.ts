@@ -112,7 +112,7 @@ export const faqData: { question: string; answer: string | string[] }[] = [
   {
     question: "What's the application deadline?",
     answer:
-      "Applications for the 2026–27 year close August 24. Submit the form below and we'll follow up by email within 2 business days.",
+      "Applications for the 2026–27 year are open on a rolling basis. Submit the form below and we'll follow up by email within 2 business days.",
   },
 ];
 
