@@ -1,5 +1,4 @@
 import Image from "next/image";
-import PhotoSlot from "@/components/ui/PhotoSlot";
 
 export default function Hero() {
   return (
@@ -52,14 +51,28 @@ export default function Hero() {
           Apply Now
         </a>
       </div>
-      <PhotoSlot
-        src="/hero-team.jpg"
-        alt="Marcus Rios Athlete Academy team at the training facility"
-        placeholder="Drop a photo: athlete training on turf"
-        height="clamp(260px, 40vw, 440px)"
-        sizes="(max-width: 860px) 100vw, 45vw"
-        priority
-      />
+      {/* Hero photo rendered directly (not via PhotoSlot) so the priority
+          preload is guaranteed — this is the page's largest above-the-fold
+          image and drives LCP. */}
+      <div
+        style={{
+          width: "100%",
+          height: "clamp(260px, 40vw, 440px)",
+          borderRadius: 4,
+          overflow: "hidden",
+          position: "relative",
+        }}
+      >
+        <Image
+          src="/hero-team.jpg"
+          alt="Marcus Rios Athlete Academy team at the training facility"
+          fill
+          sizes="(max-width: 860px) 100vw, 45vw"
+          priority
+          fetchPriority="high"
+          style={{ objectFit: "cover", objectPosition: "center" }}
+        />
+      </div>
     </section>
   );
 }
