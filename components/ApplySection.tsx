@@ -34,6 +34,7 @@ export default function ApplySection() {
           src={FORM_EMBED_URL}
           width="100%"
           height={1600}
+          loading="lazy"
           style={{ border: 0, borderRadius: "var(--radius-md)" }}
           title="Academy application form"
         >
