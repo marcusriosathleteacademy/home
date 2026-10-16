@@ -16,7 +16,7 @@ export default function CoachSection() {
         style={{ gridTemplateColumns: "minmax(280px,0.8fr) minmax(360px,1.2fr)", gap: 40 }}
       >
         <PhotoSlot
-          src="/coach-headshot.png"
+          src="/coach-headshot.jpg"
           alt="Coach Marcus Rios"
           placeholder="Drop a photo: Coach Marcus Rios"
           height="clamp(260px, 38vw, 380px)"
