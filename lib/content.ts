@@ -60,7 +60,7 @@ export const facilities: { id: string; label: string; placeholder: string; src?:
   { id: "fac-recovery-lounge", label: "Recovery Lounge", placeholder: "Drop a photo: recovery lounge", src: "/facilities-recovery-lounge.jpg" },
   { id: "fac-recovery-boots", label: "Compression Recovery Boots", placeholder: "Drop a photo: recovery boots", src: "/facilities-recovery-boots.jpg" },
   { id: "fac-massage", label: "Percussion Massage Tools", placeholder: "Drop a photo: massage tools", src: "/facilities-massage-tools.jpg" },
-  { id: "fac-study", label: "Study Hall", placeholder: "Drop a photo: study hall", src: "/classroom.png" },
+  { id: "fac-study", label: "Study Hall", placeholder: "Drop a photo: study hall", src: "/classroom.jpg" },
 ];
 
 export const scheduleBlocks: { t: string; name: string; dur: string; tone: BadgeTone }[] = [
