@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Anton, Open_Sans, IBM_Plex_Mono, Jost } from "next/font/google";
+import { Anton, Open_Sans } from "next/font/google";
 import "./globals.css";
 
 const anton = Anton({
@@ -9,20 +9,10 @@ const anton = Anton({
 });
 
 const openSans = Open_Sans({
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
   style: ["normal", "italic"],
   variable: "--font-open-sans",
-});
-
-const plexMono = IBM_Plex_Mono({
-  weight: ["400", "500", "600", "700"],
-  subsets: ["latin"],
-  variable: "--font-plex-mono",
-});
-
-const jost = Jost({
-  subsets: ["latin"],
-  variable: "--font-jost",
 });
 
 export const metadata: Metadata = {
@@ -52,7 +42,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${anton.variable} ${openSans.variable} ${plexMono.variable} ${jost.variable}`}
+      className={`${anton.variable} ${openSans.variable}`}
     >
       <body>
         <script
@@ -64,3 +54,4 @@ export default function RootLayout({
     </html>
   );
 }
+
