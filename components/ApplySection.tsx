@@ -33,7 +33,7 @@ export default function ApplySection() {
         <iframe
           src={FORM_EMBED_URL}
           width="100%"
-          height={600}
+          height={2150}
           loading="lazy"
           style={{ border: 0, borderRadius: "var(--radius-md)" }}
           title="Academy application form"
