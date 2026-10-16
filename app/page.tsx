@@ -52,7 +52,7 @@ export default function Home() {
         title="School Doesn't Stop"
         body="2 hours of supervised study hall and academic guidance every day, working alongside your homeschool or independent study curriculum. No slipping grades to chase a roster spot."
         photoPlaceholder="Drop a photo: study hall session"
-        photoSrc="/classroom.png"
+        photoSrc="/classroom.jpg"
         photoAlt="Study hall classroom"
         columns="minmax(360px,1.2fr) minmax(280px,1fr)"
       />
