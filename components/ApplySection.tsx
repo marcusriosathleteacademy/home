@@ -1,11 +1,11 @@
 "use client";
 
-// Inquiries now go through a Google Form (embedded below) instead of the
-// previous Supabase-backed custom form. Responses are collected in the
-// linked Google account and watched via the Forms API.
+// Inquiries go through the Notion inquiry form (embedded below).
+// Responses land in the "Contacts" database in Adriene's Space and are
+// watched via the Notion API.
 
 const FORM_EMBED_URL =
-  "https://docs.google.com/forms/d/e/1FAIpQLSdl1S6XjbU7ZIiaWre4MkcubMGQQKBHrYN2-1md-iLWLiJWaA/viewform?embedded=true";
+  "https://light-action-638.notion.site/ebd//71fe78854b6d4860af1a3ce1b49eb7a8";
 
 export default function ApplySection() {
   return (
@@ -33,7 +33,7 @@ export default function ApplySection() {
         <iframe
           src={FORM_EMBED_URL}
           width="100%"
-          height={1600}
+          height={600}
           loading="lazy"
           style={{ border: 0, borderRadius: "var(--radius-md)" }}
           title="Academy application form"
