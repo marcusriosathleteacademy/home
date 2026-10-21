@@ -24,10 +24,10 @@ export default function ProgramSection() {
           <h2 className="section-title">Program</h2>
           <p style={{ font: "var(--text-body-md)", color: "var(--text-secondary)", fontSize: 15, fontWeight: 300 }}>
             Marcus Rios Athlete Academy&apos;s Homeschool &amp; Reclass Program was built for
-            serious student-athletes who are homeschooled or reclassed, and need more than a
+            student-athletes who are homeschooled or reclassed, and need more than a
             normal school day can give them. It combines focused training, academic support, and
             real off-the-field development to make it to the next level.{" "}
-            <em>All sports. Grades 6–12. Sacramento, CA.</em>
+            <em>Open to all students in grades 6–12, regardless of experience or skill level. All sports. Sacramento, CA.</em>
           </p>
         </div>
       </div>
