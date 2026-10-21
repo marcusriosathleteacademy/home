@@ -79,7 +79,7 @@ export const faqData: { question: string; answer: string | string[] }[] = [
       "Our private training facility is located at:",
       "193 Otto Circle\nSacramento, CA 95822",
       "Our facility is a private, high-performance training environment and is not open to the public. To preserve the experience for our athletes, we do not accommodate walk-ins, unscheduled drop-ins, or facility tours.",
-      "If you're interested in training with us, we invite you to submit an application through our website. Applications are reviewed by our team, and qualified athletes will be contacted with next steps.",
+      "If you're interested in training with us, we invite you to submit an application through our website. Every application is reviewed by our team, and all applicants will be contacted with next steps. The program is open to all students in grades 6 to 12, regardless of experience or skill level. The application is simply how we get to know each athlete at intake.",
       "For athletes outside the Sacramento area, Marcus Rios' online training programs provide access to expert coaching from anywhere: https://my.playbookapp.io/marcus-rios.",
     ],
   },
