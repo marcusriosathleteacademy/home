@@ -40,7 +40,7 @@ export default function ApplySection() {
           }}
         >
           Open to all students in grades 6 to 12, regardless of experience or skill
-          level. No tryouts and no evaluations.
+          level.
         </p>
         <iframe
           src={FORM_EMBED_URL}
