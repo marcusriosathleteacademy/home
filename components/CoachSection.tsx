@@ -9,7 +9,7 @@ export default function CoachSection() {
     <section id="coach" className="section">
       <div className="eyebrow">Coach</div>
       <h2 className="section-title" style={{ marginBottom: 32 }}>
-        Elite Athlete Coaching by <span style={{ color: "var(--neon-1)" }}>Marcus Rios</span>
+        Athlete Coaching by <span style={{ color: "var(--neon-1)" }}>Marcus Rios</span>
       </h2>
       <div
         className="split-grid"
