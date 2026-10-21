@@ -30,6 +30,18 @@ export default function ApplySection() {
         >
           Apply now to reserve your athlete&apos;s place in the program.
         </p>
+        <p
+          style={{
+            font: "var(--text-body-sm)",
+            color: "var(--text-secondary)",
+            textAlign: "center",
+            marginBottom: 32,
+            marginTop: -16,
+          }}
+        >
+          Open to all students in grades 6 to 12, regardless of experience or skill
+          level. No tryouts and no evaluations.
+        </p>
         <iframe
           src={FORM_EMBED_URL}
           width="100%"
