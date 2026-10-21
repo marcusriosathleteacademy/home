@@ -50,7 +50,7 @@ export default function Home() {
         background="raised"
         eyebrow="Academics"
         title="School Doesn't Stop"
-        body="2 hours of supervised study hall and academic guidance every day, working alongside your homeschool or independent study curriculum. No slipping grades to chase a roster spot."
+        body="2 hours of supervised study hall and academic guidance every day, working alongside your homeschool or independent study curriculum. No slipping grades while you train."
         photoPlaceholder="Drop a photo: study hall session"
         photoSrc="/classroom.jpg"
         photoAlt="Study hall classroom"
